@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.alexfuster.reminder.R
 import com.alexfuster.reminder.databinding.FragmentMainBinding
 import com.alexfuster.reminder.model.modelview.ReminderViewModel
 
@@ -22,7 +24,7 @@ class MainFragment : Fragment() {
 
     _binding = FragmentMainBinding.inflate(inflater, container, false)
 
-    configureUI();
+    configureUI()
 
     return binding.root
   }
@@ -35,8 +37,8 @@ class MainFragment : Fragment() {
 
   private fun configureUI() {
     initRecyclerView()
+    initListeners()
   }
-
 
   private fun initRecyclerView() {
 
@@ -50,6 +52,10 @@ class MainFragment : Fragment() {
     adapter.submitList(lista)
   }
 
+  private fun initListeners() {
+    binding.fabAddReminder.setOnClickListener(
+      Navigation.createNavigateOnClickListener(R.id.action_main_fragment_to_add_reminder_fragment))
+  }
 
 
   private fun onClickItemListener(position: Int, item: ReminderViewModel) {

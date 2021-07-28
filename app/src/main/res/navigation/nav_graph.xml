@@ -11,6 +11,20 @@
         android:name="com.alexfuster.reminder.ui.main.MainFragment"
         android:label=""
         tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_main_fragment_to_add_reminder_fragment"
+            app:destination="@id/add_reminder_fragment"
+            app:enterAnim="@anim/slide_in_up"
+            app:exitAnim="@anim/slide_out_down"
+            app:popEnterAnim="@anim/slide_in_down"
+            app:popExitAnim="@anim/slide_out_up"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/add_reminder_fragment"
+        android:name="com.alexfuster.reminder.ui.add.AddReminderFragment"
+        android:label=""
+        tools:layout="@layout/fragment_add_reminder">
     </fragment>
 
 </navigation>

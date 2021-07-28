@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="thumbnail_corner">10dp</dimen>
+
+    <dimen name="slidingmenu_offset">60dp</dimen>
+    <dimen name="slidingmenu_shadow_width">20dp</dimen>
+
+    <dimen name="default_topbar_font_size">23sp</dimen>
+    <dimen name="default_tabbar_font_size">10sp</dimen>
+
+    <dimen name="default_cell_font_size">15sp</dimen>
+    <dimen name="default_cell_font_size_title">17sp</dimen>
+    <dimen name="default_cell_font_size_smaller">13sp</dimen>
+
+    <dimen name="big_button_height">57dp</dimen>
+    <dimen name="textfield_text_size">17sp</dimen>
+    <dimen name="big_button_text_size">17sp</dimen>
+    <dimen name="big_button_corner_radius">12dp</dimen>
+    <dimen name="small_corner_radius">8dp</dimen>
+
+    <dimen name="screen_top_margin">20dp</dimen>
+    <dimen name="screen_bottom_margin">20dp</dimen>
+    <dimen name="horizontal_margin_big">40dp</dimen>
+    <dimen name="horizontal_margin_small">17dp</dimen>
+    <dimen name="textfield_height">50sp</dimen>
+
+    <dimen name="default_cell_horizontal_margin">16dp</dimen>
+    <dimen name="default_cell_vertical_margin">12dp</dimen>
+    <dimen name="default_cell_vertical_margin_half">6dp</dimen>
+
+
+    <dimen name="alert_edittext_padding">10dp</dimen>
+
+    <dimen name="bank_label_margin">40dp</dimen>
+
+    <dimen name="default_popup_margin">30dp</dimen>
+
+    <dimen name="item_padding">15dp</dimen>
+
+    <dimen name="register_icon_padding_constraint">5dp</dimen>
+
+
+</resources>
