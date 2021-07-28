@@ -63,4 +63,8 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
     // Dynamic Feature Module Support
     implementation "androidx.navigation:navigation-dynamic-features-fragment:2.3.5"
+
+    //UI
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+
 }

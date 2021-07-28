@@ -1,3 +1,46 @@
 <resources>
     <string name="app_name">Reminder</string>
+
+    <string name="time_left">%1$s días para pasar la factura</string>
+
+    <!-- Commons -->
+    <string name="back_button">Volver</string>
+    <string name="ok">OK</string>
+
+
+    <!-- Add/Edit Challenge Fragment -->
+    <string name="select_date_picker">Seleccionar fecha</string>
+    <string name="name_hint">Nombre</string>
+    <string name="title_hint">Título</string>
+    <string name="prediction_hint">Predicción</string>
+    <string name="start_date_hint">Fecha de comienzo</string>
+    <string name="end_date_hint">Fecha límite</string>
+    <string name="add_button">Añadir</string>
+    <string name="edit_button">Editar</string>
+    <string name="contacts_permission_dialog_title">"Permiso de contactos"</string>
+    <string name="contacts_permission_dialog_body">"El permiso de lectura de contacto facilita la búsqueda de nombres en la agenda del móvil. No se modificarán contactos, sólo se leerán"</string>
+    <string name="error_title">Titulo requerido</string>
+    <string name="error_name">Nombre requerido</string>
+    <string name="error_prediction">Predicción requerida</string>
+    <string name="error_date">Fecha requerida</string>
+    <string name="error_minimum_date">Fecha límite no puede ser anterior a hoy</string>
+    <string name="error_minimum_date_on_edit">Fecha límite no puede ser anterior a %1$s</string>
+
+
+    <!-- Main screen -->
+    <string name="filter_all">Todos</string>
+    <string name="filter_active">Activos</string>
+    <string name="filter_expired">Expirados</string>
+    <string name="sorted_by_newest">Últimos introducidos</string>
+    <string name="sorted_by_expire_soon">Expiran pronto</string>
+    <string name="floating_button_description">Añadir elemento</string>
+    <string name="empty_message">¿Tu cuñado aun no ha pronosticado nada? Añade facturas cuando lo haga.</string>
+    <string name="item_deleted">Borrado</string>
+    <string name="item_undo_done">Borrado deshecho</string>
+    <string name="item_undo">Deshacer</string>
+
+    <!-- Detail dialog screen -->
+    <string name="share_title">"Compartir vía"</string>
+    <string name="share_info">Esta es la factura de %1$s que finaliza el %2$s</string>
+
 </resources>
