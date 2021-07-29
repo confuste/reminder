@@ -2,6 +2,7 @@ package com.alexfuster.reminder.repository.db.dao
 
 import androidx.room.*
 import com.alexfuster.reminder.repository.db.entities.ReminderEntity
+import javax.inject.Inject
 
 @Dao
 interface ReminderDao {
