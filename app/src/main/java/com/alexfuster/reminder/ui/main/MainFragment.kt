@@ -41,15 +41,10 @@ class MainFragment : Fragment() {
   }
 
   private fun initRecyclerView() {
-
-    val item1 = ReminderViewModel(0, "alex", "titulo", "texto aqui", 1861920000000, 1893456000000)
-    val item2 = ReminderViewModel(1, "alex", "titulo", "texto aqui", 1861920000000, 1893456000000)
-    val lista = listOf(item1, item2)
-
     binding.rvChallenges.layoutManager = LinearLayoutManager(context)
     adapter = RecyclerViewAdapter(this::onClickItemListener, this::onClickItemMenuListener)
     binding.rvChallenges.adapter = adapter
-    adapter.submitList(lista)
+    adapter.submitList(emptyList())
   }
 
   private fun initListeners() {
