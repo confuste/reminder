@@ -1,4 +1,4 @@
-package com.alexfuster.reminder.repository.db
+package com.alexfuster.reminder.repository.local.database
 
 object DBConstants {
 

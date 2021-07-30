@@ -2,10 +2,11 @@ package com.alexfuster.reminder.app.di
 
 import android.content.Context
 import androidx.room.Room
-import androidx.room.RoomDatabase
-import com.alexfuster.reminder.repository.db.AppDatabase
-import com.alexfuster.reminder.repository.db.DBConstants
-import com.alexfuster.reminder.repository.db.dao.ReminderDao
+import com.alexfuster.reminder.repository.local.database.AppDatabase
+import com.alexfuster.reminder.repository.local.database.DBConstants
+import com.alexfuster.reminder.repository.local.LocalRepository
+import com.alexfuster.reminder.repository.local.LocalRepositoryImp
+import com.alexfuster.reminder.repository.local.dao.ReminderDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,5 +27,10 @@ class AppModule {
   @Singleton
   @Provides
   fun provideReminderDao(db: AppDatabase): ReminderDao = db.reminderDao()
+
+  @Singleton
+  @Provides
+  fun provideLocalRepository(reminderDao: ReminderDao): LocalRepository =
+    LocalRepositoryImp(reminderDao)
 
 }

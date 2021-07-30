@@ -1,9 +1,9 @@
-package com.alexfuster.reminder.repository.db
+package com.alexfuster.reminder.repository.local.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.alexfuster.reminder.repository.db.dao.ReminderDao
-import com.alexfuster.reminder.repository.db.entities.ReminderEntity
+import com.alexfuster.reminder.repository.local.dao.ReminderDao
+import com.alexfuster.reminder.repository.local.entities.ReminderEntity
 
 @Database(entities = [ReminderEntity::class], version = 1)
 abstract class AppDatabase: RoomDatabase() {

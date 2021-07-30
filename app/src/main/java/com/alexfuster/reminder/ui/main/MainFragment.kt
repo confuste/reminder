@@ -41,9 +41,9 @@ class MainFragment : Fragment() {
   }
 
   private fun initRecyclerView() {
-    binding.rvChallenges.layoutManager = LinearLayoutManager(context)
+    binding.rvReminders.layoutManager = LinearLayoutManager(context)
     adapter = RecyclerViewAdapter(this::onClickItemListener, this::onClickItemMenuListener)
-    binding.rvChallenges.adapter = adapter
+    binding.rvReminders.adapter = adapter
     adapter.submitList(emptyList())
   }
 

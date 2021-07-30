@@ -1,4 +1,4 @@
-package com.alexfuster.reminder.repository.db.entities
+package com.alexfuster.reminder.repository.local.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

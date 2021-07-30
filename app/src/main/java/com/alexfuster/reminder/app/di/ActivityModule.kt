@@ -1,6 +1,6 @@
 package com.alexfuster.reminder.app.di
 
-import com.alexfuster.reminder.repository.db.dao.ReminderDao
+import com.alexfuster.reminder.repository.local.LocalRepository
 import com.alexfuster.reminder.ui.add.AddReminderViewModel
 import dagger.Module
 import dagger.Provides
@@ -14,7 +14,8 @@ class ActivityModule {
 
 
   @Provides
-  fun provideAddReminderViewModel(reminderDao: ReminderDao) = AddReminderViewModel(reminderDao)
+  fun provideAddReminderViewModel(localRepository: LocalRepository) =
+    AddReminderViewModel(localRepository)
 
 
 }
