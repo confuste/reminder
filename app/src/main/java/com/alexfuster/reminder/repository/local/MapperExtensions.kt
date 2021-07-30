@@ -11,3 +11,7 @@ fun List<ReminderEntity>.toReminderViewModel(): List<ReminderViewModel> {
 
 fun ReminderEntity.toReminderViewModel(): ReminderViewModel =
   ReminderViewModel(id, name, title, text, startDate, endDate)
+
+fun ReminderViewModel.toReminderEntity(): ReminderEntity =
+  ReminderEntity(id, name, title, text, startDate, endDate)
+

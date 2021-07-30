@@ -33,7 +33,6 @@ class AddReminderFragment: Fragment() {
 
     viewModel.addReminder(ReminderViewModel(0, "alex", "titulo", "texto", 0,0))
 
-
     return binding.root
   }
 

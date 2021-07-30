@@ -1,4 +1,4 @@
-package com.alexfuster.reminder.ui.add
+package com.alexfuster.reminder.ui.main
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -9,29 +9,29 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
-class AddReminderViewModel @Inject constructor(private val localRepository: LocalRepository) : ViewModel() {
+class MainViewModel @Inject constructor(private val localRepository: LocalRepository) : ViewModel() {
 
-  private val _isAdded = MutableStateFlow(false)
-  val isAdded: StateFlow<Boolean>
-    get() = _isAdded
+  private val _reminderList = MutableStateFlow<List<ReminderViewModel>>(emptyList())
+  val reminderList: StateFlow<List<ReminderViewModel>>
+    get() =_reminderList
 
+  init {
+    observeLocalRepository()
+  }
 
-  fun addReminder(reminder: ReminderViewModel) {
-
-
+  private fun observeLocalRepository() {
     viewModelScope.launch {
-
       withContext(Dispatchers.IO) {
-        localRepository.insert(reminder)
+        localRepository.getAll().collect {
+          _reminderList.value = it
+        }
       }
-
-      _isAdded.value = true
-
     }
   }
 }

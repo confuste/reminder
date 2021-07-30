@@ -1,17 +1,26 @@
 package com.alexfuster.reminder.ui.main
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alexfuster.reminder.R
 import com.alexfuster.reminder.databinding.FragmentMainBinding
 import com.alexfuster.reminder.model.modelview.ReminderViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
 
+@AndroidEntryPoint
 class MainFragment : Fragment() {
+
+  private val viewModel: MainViewModel by viewModels()
+
 
   private var _binding: FragmentMainBinding? = null
   private val binding
@@ -24,7 +33,7 @@ class MainFragment : Fragment() {
 
     _binding = FragmentMainBinding.inflate(inflater, container, false)
 
-    configureUI()
+    configureUIAndObservers()
 
     return binding.root
   }
@@ -35,10 +44,13 @@ class MainFragment : Fragment() {
   }
 
 
-  private fun configureUI() {
+  private fun configureUIAndObservers() {
     initRecyclerView()
-    initListeners()
+    setClickListeners()
+    subscribeViewModelObservers()
   }
+
+
 
   private fun initRecyclerView() {
     binding.rvReminders.layoutManager = LinearLayoutManager(context)
@@ -47,9 +59,18 @@ class MainFragment : Fragment() {
     adapter.submitList(emptyList())
   }
 
-  private fun initListeners() {
+  private fun setClickListeners() {
     binding.fabAddReminder.setOnClickListener(
       Navigation.createNavigateOnClickListener(R.id.action_main_fragment_to_add_reminder_fragment))
+  }
+
+  private fun subscribeViewModelObservers() {
+    lifecycleScope.launchWhenStarted {
+      viewModel.reminderList.collect {
+        adapter.submitList(it)
+        Log.i("Alex", "Actualiza la lista en el MainFragment")
+      }
+    }
   }
 
 
